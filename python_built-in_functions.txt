@@ -1,0 +1,164 @@
+Built-In Python Functions
+
+abs() -- Returns the absolute of a number
+
+aiter() -- Returns an asynchronous iterator for an asynchronous iterable
+
+all() -- Returns True if all elements of the iterable are true (or if the 
+	iterable is empty).
+
+anext() -- awaitable anext(async_iterable[, default]) : When awaited, return the 
+	next item from the given asynchronous iterator, or default if given and 
+	the iterator is exhausted
+
+any() -- Returns True if any element of the iterable is true. If the iterable is 
+	empty, return False.
+
+ascii() -- returns a string containing a printable representation of an object,
+		but escapes the non-ASCII characters in the string.
+
+-------------------------------------------------------------------------------
+
+bin() -- converts an integer number to a binary string prefixed with "0b".
+
+bool() -- returns a boolean value
+
+breakpoint() -- drops you into the debugger at the call site
+
+bytearray() -- returns a new array of bytes
+
+bytes() -- returns a new "bytes" object which is an immutable sequence of 
+	integers in the range 0<=x<256.
+
+-------------------------------------------------------------------------------
+
+callable() -- Returns true if the object argument appears callable, 
+		False if not.
+
+chr(i) -- returns the string representing a character whose Unicode code point
+	is the integer i.
+
+classmethod() -- transforms a method into a class method
+
+compile() -- compile source into a code or AST object
+
+complex() -- returns a complex number with the value real+imag*1j or convert 
+		a string or number to a complex number
+
+-------------------------------------------------------------------------------
+
+delattr(object, name) -- The arguments are an object and a string. The string 
+	must be the name of one of the object’s attributes. The function 
+	deletes the named attribute, provided the object allows it
+
+dict() -- creates a new dictionary 
+
+dir([object]) -- Without arguments, return the list of names in the current 
+	local scope. With an argument, attempt to return a list of valid 
+	attributes for that object.
+
+divmod(a,b) -- Takes two (non-complex) numbers as arguments and returns
+	a pair of numbers consisting of their quotient and remainder when 
+	using integer division.
+
+-------------------------------------------------------------------------------
+
+enumerate(iterable) -- returns a tuple containing a count and the values 
+	obtained from iterating over the iterable
+
+eval() -- returns the result of the expression
+
+exec() -- execution of python code
+
+------------------------------------------------------------------------------
+
+filter(function, iterable) -- constructs an iterator from those elements of 
+	iterable for which function returns true
+
+float(x) -- returns a floating point number constructed from a number or 
+	string x
+
+format() -- converts a value to a “formatted” representation
+
+frozenset([iterable]) --returns a new frozenset object, optionally with 
+		elements taken from iterable
+
+-----------------------------------------------------------------------------
+
+getattr(object, name[,default]) -- returns the value of the named attribute 
+	of object. name must be string. default is returned if name is not
+	found in object
+
+globals() -- returns the dictionary implementing the current module 
+	namespace.
+
+-----------------------------------------------------------------------------
+
+hasattr(object, name) -- returns True if the string name is an attribute of
+	object, False otherwise
+
+hash(object) -- returns the hash value of the object (if it has one)
+
+help([object]) -- invokes the built-in help system
+
+hex(x) -- convert an integer to a lowercase hexadecimal string prefixed 
+	with '0x'
+
+----------------------------------------------------------------------------
+
+id(object) -- returns the "identity" of an object
+
+input([prompt]) -- reads a line from input, converts it to a string, and 
+	returns it.
+
+int([x]) -- returns an integer object constructed from a number or string,
+	or returns 0 if no arguments are given.
+
+isinstance()
+issubclass()
+iter()
+
+-----------------------------------------------------------------------------
+
+len()
+list()
+locals()
+
+map()
+max()
+memoryview()
+min()
+
+next()
+
+object()
+oct()
+open()
+ord()
+
+pow()
+print()
+property()
+
+range()
+repr()
+reversed()
+round()
+
+set()
+setattr()
+slice()
+sorted()
+staticmethod()
+str()
+sum()
+super()
+
+tuple()
+type()
+
+vars()
+
+zip()
+
+__import__()
