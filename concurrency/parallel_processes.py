@@ -9,17 +9,21 @@ def sleep_around(sec):
     time.sleep(sec)
     print("Done sleeping...")
 
+def processes():
+    processes = []
+    num_process = int(input("How many processes will you create? "))
+    for _ in range(num_process):
+        p = multiprocessing.Process(target=sleep_around, args=[2,])
+        p.start()
+        processes.append(p)
+
+    for p in processes:
+        p.join()
+
 
 if __name__ == "__main__":
     start = time.perf_counter()
-    p1 = multiprocessing.Process(target=sleep_around, args=[10])
-    p2 = multiprocessing.Process(target=sleep_around, args=[10])
-
-    p1.start()
-    p2.start()
-
-    p1.join()
-    p2.join()
+    processes()
 
     finish = time.perf_counter()
     print(f"Done executing in {round(finish-start, 2)} seconds")
