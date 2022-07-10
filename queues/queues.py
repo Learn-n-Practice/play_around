@@ -38,8 +38,8 @@ class PriorityQueue:
     def __int__(self):
         self._elements = []
     
-    def enqueue_with_priority(self, priority, value):
+    def push(self, priority, value):
         heappush(self._elements, (priority, value))
     
-    def dequeue(self):
+    def pop(self):
         return heappop(self._elements)
