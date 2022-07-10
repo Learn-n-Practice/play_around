@@ -39,7 +39,7 @@ class PriorityQueue:
         self._queue = []
     
     def push(self, priority, value):
-        heappush(self._queue, (priority, value))
+        heappush(self._queue, (-priority, value))
     
     def pop(self):
-        return heappop(self._queue)
+        return heappop(self._queue)[1]
