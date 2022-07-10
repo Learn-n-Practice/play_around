@@ -1,7 +1,8 @@
 from collections import deque
+from heapq import heappush, heappop
 
 class Queue:
-    """Class that implements a queue"""
+    """A class that implements a queue (FIFO Queue)"""
     
     def __init__(self):
         self._elements = deque()
@@ -22,3 +23,23 @@ class Queue:
     def dequeue(self):
         """Remove element from queue"""
         return self._elements.popleft()
+
+
+class Stack(Queue):
+    """A class that implements a stack (LIFO Queue). It inherits the Queue class"""
+
+    def dequeue(self):
+        return self._elements.pop()
+
+
+class PriorityQueue:
+    """A class that implements a priority queue"""
+
+    def __int__(self):
+        self._elements = []
+    
+    def enqueue_with_priority(self, priority, value):
+        heappush(self._elements, (priority, value))
+    
+    def dequeue(self):
+        return heappop(self._elements)
