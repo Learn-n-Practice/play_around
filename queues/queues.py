@@ -12,7 +12,7 @@ class IterableMixin:
     def __iter__(self):
         """Make the queue iterable"""
         while len(self) > 0:
-            yield self.dequeue()
+            yield self.pop()
 
 class Queue(IterableMixin):
     """A class that implements a queue (FIFO Queue)"""
@@ -20,11 +20,11 @@ class Queue(IterableMixin):
     def __init__(self, *elements):
         self._elements = deque(*elements)
 
-    def enqueue(self, element):
+    def push(self, element):
         """Add element to end of queue"""
         self._elements.append(element)
 
-    def dequeue(self):
+    def pop(self):
         """Remove element from queue"""
         return self._elements.popleft()
 
@@ -32,7 +32,7 @@ class Queue(IterableMixin):
 class Stack(Queue):
     """A class that implements a stack (LIFO Queue). It inherits the Queue class"""
 
-    def dequeue(self):
+    def pop(self):
         return self._elements.pop()
 
 
