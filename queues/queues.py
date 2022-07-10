@@ -36,10 +36,10 @@ class PriorityQueue:
     """A class that implements a priority queue"""
 
     def __int__(self):
-        self._elements = []
+        self._queue = []
     
     def push(self, priority, value):
-        heappush(self._elements, (priority, value))
+        heappush(self._queue, (priority, value))
     
     def pop(self):
-        return heappop(self._elements)
+        return heappop(self._queue)
