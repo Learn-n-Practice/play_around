@@ -35,7 +35,7 @@ class Stack(Queue):
 class PriorityQueue:
     """A class that implements a priority queue"""
 
-    def __int__(self):
+    def __init__(self):
         self._queue = []
     
     def push(self, priority, value):
