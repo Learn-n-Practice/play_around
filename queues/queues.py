@@ -1,5 +1,6 @@
 from collections import deque
 from heapq import heappush, heappop
+from itertools import count
 
 class Queue:
     """A class that implements a queue (FIFO Queue)"""
@@ -37,9 +38,10 @@ class PriorityQueue:
 
     def __init__(self):
         self._queue = []
+        self._counter = count()
     
     def push(self, priority, value):
-        heappush(self._queue, (-priority, value))
+        heappush(self._queue, (-priority, next(self._counter), value))
     
     def pop(self):
-        return heappop(self._queue)[1]
+        return heappop(self._queue)[-1]
