@@ -2,12 +2,9 @@ from collections import deque
 from heapq import heappush, heappop
 from itertools import count
 
-class Queue:
-    """A class that implements a queue (FIFO Queue)"""
-    
-    def __init__(self):
-        self._elements = deque()
 
+class IterableMixin:
+    "A mixin class to create an iterable and length reporting"
     def __len__(self):
         """Enable length reporting"""
         return len(self._elements)
@@ -16,6 +13,12 @@ class Queue:
         """Make the queue iterable"""
         while len(self) > 0:
             yield self.dequeue()
+
+class Queue(IterableMixin):
+    """A class that implements a queue (FIFO Queue)"""
+    
+    def __init__(self, *elements):
+        self._elements = deque(*elements)
 
     def enqueue(self, element):
         """Add element to end of queue"""
@@ -33,15 +36,15 @@ class Stack(Queue):
         return self._elements.pop()
 
 
-class PriorityQueue:
+class PriorityQueue(IterableMixin):
     """A class that implements a priority queue"""
 
     def __init__(self):
-        self._queue = []
+        self._elements = []
         self._counter = count()
     
     def push(self, priority, value):
-        heappush(self._queue, (-priority, next(self._counter), value))
+        heappush(self._elements, (-priority, next(self._counter), value))
     
     def pop(self):
-        return heappop(self._queue)[-1]
+        return heappop(self._elements)[-1]
