@@ -29,6 +29,12 @@ class LinkedList:
                 node.next = Node(data=item)
                 node = node.next
 
+    def __iter__(self):
+        node = self.head
+        while node is not None:
+            yield node
+            node = node.next
+
     def __repr__(self):
         node = self.head
         nodes = []
