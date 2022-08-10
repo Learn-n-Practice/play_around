@@ -37,14 +37,14 @@ class LinkedList:
 
     def insert_first(self, node):
         """
-        Insert new node as the head of linked list
+        Insert new node as the head of linkedlist
         """
         node.next = self.head
         self.head = node
     
     def insert_last(self, node):
         """
-        Insert node to the end of linked list
+        Insert node to the end of linkedlist
         """
         if self.head is None:
             self.head = node
@@ -58,15 +58,40 @@ class LinkedList:
         Insert new node after a target node in a linkedlist
         """
         if self.head is None:
-            raise Exception("Linked list is empty")
+            raise Exception("Linkedlist is empty")
+
         for node in self:
             if node.data == target_node_data:
                 new_node.next = node.next
                 node.next = new_node
                 return
+                
+        raise Exception(f"Node with data {target_node_data} not found")
+
+    def insert_before(self, target_node_data, new_node):
+        """
+        Insert new node before a target node in a linkedlist
+        """
+        if self.head is None:
+            raise Exception("List is empty")
+
+        if self.head.data == target_node_data:
+            return self.add_first(new_node)
+
+        prev_node = self.head
+        for node in self:
+            if node.data == target_node_data:
+                prev_node.next = new_node
+                new_node.next = node
+                return
+            prev_node = node
+
         raise Exception(f"Node with data {target_node_data} not found")
 
     def __iter__(self):
+        """
+        Make the linkedlist iterable
+        """
         node = self.head
         while node is not None:
             yield node
