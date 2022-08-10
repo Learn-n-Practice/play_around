@@ -20,8 +20,14 @@ class Node:
 
 
 class LinkedList:
-    def __init__(self, head=None):
-        self.head = head
+    def __init__(self, nodes=None):
+        self.head = None
+        if nodes is not None:
+            node = Node(data=nodes.pop(0))
+            self.head = node
+            for item in nodes:
+                node.next = Node(data=item)
+                node = node.next
 
     def __repr__(self):
         node = self.head
