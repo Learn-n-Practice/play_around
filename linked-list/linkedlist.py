@@ -14,3 +14,21 @@ class Node:
 
     def set_next(self, next):
         self.next = next
+
+    def __repr__(self):
+        return self.data
+
+
+class LinkedList:
+    def __init__(self, head=None):
+        self.head = head
+
+    def __repr__(self):
+        node = self.head
+        nodes = []
+
+        while node is not None:
+            nodes.append(node.data)
+            node = node.next
+        nodes.append("None")
+        return " -> ".join(nodes)
