@@ -65,7 +65,7 @@ class LinkedList:
                 new_node.next = node.next
                 node.next = new_node
                 return
-                
+
         raise Exception(f"Node with data {target_node_data} not found")
 
     def insert_before(self, target_node_data, new_node):
@@ -73,7 +73,7 @@ class LinkedList:
         Insert new node before a target node in a linkedlist
         """
         if self.head is None:
-            raise Exception("List is empty")
+            raise Exception("Linkedlist is empty")
 
         if self.head.data == target_node_data:
             return self.add_first(new_node)
@@ -85,6 +85,23 @@ class LinkedList:
                 new_node.next = node
                 return
             prev_node = node
+
+        raise Exception(f"Node with data {target_node_data} not found")
+
+    def remove_node(self, target_node_data):
+        if self.head is None:
+            raise Exception("Linkedlist is empty")
+
+        if self.head.data == target_node_data:
+            self.head = self.head.next
+            return
+
+        previous_node = self.head
+        for node in self:
+            if node.data == target_node_data:
+                previous_node.next = node.next
+                return
+            previous_node = node
 
         raise Exception(f"Node with data {target_node_data} not found")
 
