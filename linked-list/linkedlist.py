@@ -29,6 +29,11 @@ class LinkedList:
                 node.next = Node(data=item)
                 node = node.next
 
+    def add_first(self, node):
+        """Add new node as the head of linked list"""
+        node.next = self.head
+        self.head = node
+
     def __iter__(self):
         node = self.head
         while node is not None:
