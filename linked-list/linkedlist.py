@@ -53,6 +53,19 @@ class LinkedList:
             pass
         current_node.next = node
 
+    def insert_after(self, target_node_data, new_node):
+        """
+        Insert new node after a target node in a linkedlist
+        """
+        if self.head is None:
+            raise Exception("Linked list is empty")
+        for node in self:
+            if node.data == target_node_data:
+                new_node.next = node.next
+                node.next = new_node
+                return
+        raise Exception(f"Node with data {target_node_data} not found")
+
     def __iter__(self):
         node = self.head
         while node is not None:
