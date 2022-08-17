@@ -67,7 +67,7 @@ class LinkedList:
                 return
 
         raise Exception(f"Node with data {target_node_data} not found")
-
+ 
     def insert_before(self, target_node_data, new_node):
         """
         Insert new node before a target node in a linkedlist
