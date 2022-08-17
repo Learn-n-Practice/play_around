@@ -76,7 +76,8 @@ class LinkedList:
             raise Exception("Linkedlist is empty")
 
         if self.head.data == target_node_data:
-            return self.add_first(new_node)
+            self.insert_first(new_node)
+            return 
 
         prev_node = self.head
         for node in self:
